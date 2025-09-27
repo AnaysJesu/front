@@ -23,7 +23,7 @@ export default function FichaForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/pacientes", formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/pacientes`, formData);
       alert("Paciente guardado con éxito: " + res.data.nombres);
       handleClear();
     } catch (err) {

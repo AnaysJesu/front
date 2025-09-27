@@ -8,7 +8,7 @@ export default function BuscarApellido() {
   const handleBuscar = async () => {
     if (!apellido) return alert("Ingrese un apellido");
     try {
-      const res = await axios.get(`http://localhost:3000/api/pacientes/buscar/${apellido}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/pacientes/buscar/${apellido}`);
       setResultados(res.data);
     } catch (err) {
       console.error(err);
